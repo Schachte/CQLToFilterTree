@@ -8,9 +8,6 @@ import java.io.InputStreamReader;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.geotools.filter.text.cql2.CQLException;
 import org.geotools.filter.text.ecql.ECQL;
-import org.geotools.filter.v1_0.capabilities.OGCConfiguration;
-import org.geotools.xml.Configuration;
-import org.geotools.xml.Encoder;
 import org.opengis.filter.Filter;
 
 /**
@@ -29,8 +26,8 @@ public class CQLToTree {
         System.out.println("View Forms Utility Usage here: https://bit.ly/2Fljomq\n");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String line;
-        Configuration configuration = new OGCConfiguration();
-        Encoder encoder = new org.geotools.xml.Encoder(
+        org.geotools.xml.Configuration configuration = new org.geotools.filter.v1_0.OGCConfiguration();
+        org.geotools.xml.Encoder encoder = new org.geotools.xml.Encoder(
                 configuration);
         encoder.setIndenting(true);
 
